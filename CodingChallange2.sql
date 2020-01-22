@@ -4,22 +4,15 @@ Names varchar not null,
 Locatation varchar not null,
 Primary key (Id));
 
-drop table Department;
+--drop table Department;
 
 alter table Department
 	add Names varchar(max) not null,
 	Locations varchar(max) not null
 
-Create Table Department(
-    ID INTEGER not null IDENTITY(1,1),
-    _NAME varchar(50),
-    _Location VARCHAR(50)
-)
-
-Alter Table Department Add Primary Key (ID)
 
 
-select * from Employ;
+--select * from Employ;
 
 
 
@@ -68,3 +61,12 @@ Insert into dbo.Employee values('Richard', 'Tracy', 678912345, 1 )
 Insert into dbo.EmployeeDetails values(3,90000,'100','addresss1','Denver','CO','United States')
 Insert into dbo.EmployeeDetails values(3,90000,'100','addresss1','Denver','CO','United States')
 Insert into dbo.EmployeeDetails values(3,90000,'100','addresss1','Denver','CO','United States')
+
+Insert into Department values('Marketting', 'Boston')
+Insert into dbo.Employee values ('Tina','Smith',874550167,4)
+Insert into dbo.EmployeeDetails values (5,1500000,'100','Earth Bend Rd','New York','NY','United States')
+Select SUM(Salary) FROM dbo.EmployeeDetails a inner join dbo.Employee b on  a.EmployeeID =b.ID WHERE deptid = 4
+
+UPDATE dbo.EmployeeDetails
+set Salary = 90000
+where EmployeeID =5
